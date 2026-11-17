@@ -1,0 +1,15 @@
+{
+  "allow": [
+    {
+      "address": "0xd1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+      "label": "example router we reviewed"
+    }
+  ],
+  "flagged": [
+    {
+      "address": "0xe1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1",
+      "label": "example drainer",
+      "source": "made-up entry for the examples"
+    }
+  ]
+}

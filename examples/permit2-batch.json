@@ -1,0 +1,74 @@
+{
+  "types": {
+    "EIP712Domain": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "name": "verifyingContract",
+        "type": "address"
+      }
+    ],
+    "PermitDetails": [
+      {
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint160"
+      },
+      {
+        "name": "expiration",
+        "type": "uint48"
+      },
+      {
+        "name": "nonce",
+        "type": "uint48"
+      }
+    ],
+    "PermitBatch": [
+      {
+        "name": "details",
+        "type": "PermitDetails[]"
+      },
+      {
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "name": "sigDeadline",
+        "type": "uint256"
+      }
+    ]
+  },
+  "primaryType": "PermitBatch",
+  "domain": {
+    "name": "Permit2",
+    "chainId": 1,
+    "verifyingContract": "0x000000000022D473030F116dDEE9F6B43aC78BA3"
+  },
+  "message": {
+    "details": [
+      {
+        "token": "0xc1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1",
+        "amount": "5000000",
+        "expiration": "1795100000",
+        "nonce": "1"
+      },
+      {
+        "token": "0xc3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3",
+        "amount": "7000000",
+        "expiration": "1795100000",
+        "nonce": "0"
+      }
+    ],
+    "spender": "0xd1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+    "sigDeadline": "1795000000"
+  }
+}

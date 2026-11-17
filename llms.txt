@@ -1,0 +1,26 @@
+# approval-audit
+
+> Read-only audit of ERC-20, ERC-721 and Permit2 token approvals for an EVM address, and a decoder for EIP-2612, DAI and Permit2 signature requests and approval calldata before signing. Engineering checklist, not legal advice.
+
+Finds live approvals through eth_getLogs and eth_call, flags unlimited amounts, plain-account spenders, flagged or unlisted spenders, stale approvals and never-expiring permits, and prints revoke calldata. Computes EIP-712 digests. The RPC client refuses any non-read method. Standard library only. Tested on synthetic data only. Background: Chainalysis (approval phishing, about $1.0 billion May 2021 to November 2023) and ScamSniffer (wallet drainers, $494 million in 2024, $83.85 million in 2025, Permit the leading signature type in large cases).
+
+Built and maintained by Art Akopian, CEO of Banrox (https://banrox.com).
+
+## Docs
+
+- [README.md](https://github.com/BanroxArt/approval-audit/blob/main/README.md): Why, scan, decode, findings, what is real and what is not, limits.
+- [docs/sources.md](https://github.com/BanroxArt/approval-audit/blob/main/docs/sources.md): Primary sources.
+- [SKILL.md](https://github.com/BanroxArt/approval-audit/blob/main/SKILL.md): Agent skill for auditing approvals with this package.
+
+## Source
+
+- [scan.py](https://github.com/BanroxArt/approval-audit/blob/main/src/approvalaudit/scan.py): Log search, current state, assessment, revoke calldata.
+- [permits.py](https://github.com/BanroxArt/approval-audit/blob/main/src/approvalaudit/permits.py): Typed-data and calldata decoding.
+- [eip712.py](https://github.com/BanroxArt/approval-audit/blob/main/src/approvalaudit/eip712.py): EIP-712 hashing.
+- [rpc.py](https://github.com/BanroxArt/approval-audit/blob/main/src/approvalaudit/rpc.py): Read-only JSON-RPC, record and replay.
+
+## Optional
+
+- [CHANGELOG](https://github.com/BanroxArt/approval-audit/blob/main/CHANGELOG.md): Notable changes.
+- [SECURITY](https://github.com/BanroxArt/approval-audit/blob/main/SECURITY.md): How to report a vulnerability.
+- [CONTRIBUTING](https://github.com/BanroxArt/approval-audit/blob/main/CONTRIBUTING.md): How to propose a change.
